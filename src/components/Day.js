@@ -116,7 +116,7 @@ function Day({date, data}) {
         }
       }
     })
-  }, []) // useEffect by dopiero zacząć działać na godzinach gdy zostanie stworzona i wyrenderowana tablica z godzinami
+  }) // useEffect by dopiero zacząć działać na godzinach gdy zostanie stworzona i wyrenderowana tablica z godzinami
 
   date = new Date(date) // zamiana JSON daty na datę
 
@@ -130,7 +130,7 @@ function Day({date, data}) {
         {hours.map(({hour, firstHalf, secondHalf}, index) => {
           return (
             <>
-              {(window.innerWidth < 870 && index == 12) && (
+              {(window.innerWidth < 870 && index === 12) && (
                 <Hour key={`${date}-${index}`} last={index === 24}>
                   <HourTime last style={{marginLeft: hour >= 10 ? -9 : -5}}>
                     {hour}
